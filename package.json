@@ -27,6 +27,7 @@
     "grunt-contrib-uglify": "latest",
     "grunt-env": "^0.4.4",
     "grunt-jscs": "latest",
+    "grunt-mkdocs": "^0.2.4",
     "grunt-nuget": "^0.1.5",
     "grunt-string-replace": "latest",
     "load-grunt-tasks": "latest"
@@ -47,5 +48,5 @@
     "type": "git",
     "url": "https://github.com/eonasdan/bootstrap-datetimepicker.git"
   },
-  "version": "4.17.47"
+  "version": "4.17.48"
 }

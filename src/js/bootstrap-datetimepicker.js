@@ -1,4 +1,4 @@
-/*! version : 4.17.47
+/*! version : 4.17.48
  =========================================================
  bootstrap-datetimejs
  https://github.com/Eonasdan/bootstrap-datetimepicker
@@ -582,7 +582,6 @@
 
             isValid = function (targetMoment, granularity) {
                 if (!targetMoment.isValid()) {
-                    console.log('1');
                     return false;
                 }
                 if (options.disabledDates && granularity === 'd' && isInDisabledDates(targetMoment)) {
@@ -599,11 +598,9 @@
                 }
 
                 if (options.monthsOfYearDisabled && granularity === 'm' && options.monthsOfYearDisabled.indexOf(targetMoment.month()) !== -1) {
-                    console.log('MONTHS', targetMoment.month());
                     return false;
                 }
                 if (options.daysOfWeekDisabled && granularity === 'd' && options.daysOfWeekDisabled.indexOf(targetMoment.day()) !== -1) {
-                    console.log('WEEK', targetMoment.day());
                     return false;
                 }
                 if (options.disabledHours && (granularity === 'h' || granularity === 'm' || granularity === 's') && isInDisabledHours(targetMoment)) {
@@ -664,7 +661,6 @@
                 }
 
                 months.each(function (index) {
-                    console.log('months each', index);
                     if (!isValid(viewDate.clone().month(index), 'm')) {
                         $(this).addClass('disabled');
                     }
@@ -1726,12 +1722,9 @@
                 }
                 return previousValue;
             }, []).sort();
-            console.log('options.daysOfWeekDisabled', options.daysOfWeekDisabled, date);
             if (options.useCurrent && !options.keepInvalid) {
-                console.log('meep')
                 var tries = 0;
                 while (!isValid(date, 'd')) {
-                    console.log('meep1')
                     date.add(1, 'd');
                     if (tries === 31) {
                         throw 'Tried 31 times to find a valid date';
@@ -1768,8 +1761,6 @@
                 }
                 return previousValue;
             }, []).sort();
-
-            console.log('options.monthsOfYearDisabled', options.monthsOfYearDisabled, date);
 
             if (options.useCurrent && !options.keepInvalid) {
                 var tries = 0;
